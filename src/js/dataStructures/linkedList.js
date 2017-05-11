@@ -18,7 +18,7 @@ function LinkedList() {
 		if (head == null) {
 			head = node;
 		} else {
-			// 头部元素
+			// 当前节点
 			let current = head;
 			// 循环直到最后一个元素
 			while (current.next) {
@@ -96,7 +96,8 @@ function LinkedList() {
 			}
 			previous = current;
 			current = current.next;
-		}*/
+		}
+		length--*/
 		let index = this.indexOf(elem);
 		this.removeAt(index);
 	};
@@ -106,7 +107,7 @@ function LinkedList() {
 	 */
 	this.removeAt = (pos) => {
 		// 位置大于等于0且小于等于链表长度才插入
-		if (pos >= 0 && pos <= length) {
+		if (pos >= 0 && pos < length) {
 			// 当前节点
 			let current = head;
 			if (pos == 0) {
@@ -121,6 +122,7 @@ function LinkedList() {
 				previous.next = current.next;
 			}
 		}
+		length--;
 	};
 	/**
 	 * 获取单向链表的头部
