@@ -4,5 +4,17 @@ import cocktailSort from './js/algorithms/sort/cocktail-sort.js';
 import selectionSort from './js/algorithms/sort/selection-sort.js';
 import insertionSort from './js/algorithms/sort/insertion-sort.js';
 import quickSort from './js/algorithms/sort/quick-sort.js';
+import Stack from './js/dataStructures/stack.js';
+import Queue from './js/dataStructures/queue.js';
+import LinkedList from './js/dataStructures/linkedList.js';
+import DoublyLinkedList from './js/dataStructures/doublyLinkedList.js';
 
-console.log(quickSort([3,4,2,1,2,2,5,10,1]))
+window.link = new DoublyLinkedList();
+for(let i=1;i<6;i++){
+	link.append(i);
+}
+
+link.insert(6,3);
+link.removeAt(4);
+
+link.toString();
