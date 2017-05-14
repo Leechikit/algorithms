@@ -21,6 +21,3 @@ function cocktailSort(arr) {
 }
 
 export default cocktailSort;
-
-// len-2 ~ 0
-// len-3 ~ 1
