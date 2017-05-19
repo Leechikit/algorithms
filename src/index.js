@@ -9,5 +9,22 @@ import Stack from './js/dataStructures/stack.js';
 import Queue from './js/dataStructures/queue.js';
 import LinkedList from './js/dataStructures/linkedList.js';
 import DoublyLinkedList from './js/dataStructures/doublyLinkedList.js';
+import Set from './js/dataStructures/set.js';
 
-// console.log(mergeSort([3,2,5,1,4,3]))
+let set = new Set();
+
+set.add(1)
+set.add(2)
+set.add(3)
+
+let otherSet = new Set();
+
+otherSet.add(4);
+otherSet.add(5);
+otherSet.add(1);
+otherSet.add(2);
+otherSet.add(3);
+
+let newSet = set.difference(otherSet);
+
+console.log(set.subset(otherSet));
