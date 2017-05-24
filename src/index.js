@@ -1,4 +1,4 @@
-require('./html/index.html');
+import './html/index.html';
 import bubbleSort from './js/algorithms/sort/bubble-sort.js';
 import cocktailSort from './js/algorithms/sort/cocktail-sort.js';
 import selectionSort from './js/algorithms/sort/selection-sort.js';
@@ -10,21 +10,26 @@ import Queue from './js/dataStructures/queue.js';
 import LinkedList from './js/dataStructures/linkedList.js';
 import DoublyLinkedList from './js/dataStructures/doublyLinkedList.js';
 import Set from './js/dataStructures/set.js';
+import BinarySearchTree from './js/dataStructures/binarySearchTree.js';
 
-let set = new Set();
+let tree = new BinarySearchTree();
 
-set.add(1)
-set.add(2)
-set.add(3)
+tree.insert(15);
+tree.insert(6);
+tree.insert(18);
+tree.insert(3);
+tree.insert(2);
+tree.insert(4);
+tree.insert(7);
+tree.insert(13);
+tree.insert(9);
+tree.insert(17);
+tree.insert(20);
 
-let otherSet = new Set();
+tree.remove(21)
 
-otherSet.add(4);
-otherSet.add(5);
-otherSet.add(1);
-otherSet.add(2);
-otherSet.add(3);
+tree.inOrderTraverse(function(item){
+	console.log(item);
+})
 
-let newSet = set.difference(otherSet);
-
-console.log(set.subset(otherSet));
+tree.printRoot();
