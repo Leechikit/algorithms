@@ -4,19 +4,33 @@ function quickSort(arr) {
 	}
 
 	function partition(left, right) {
-		if (left < right) {
-			let value = arr[left];
-			let index = left - 1;
-			for (let i = left + 1; i <= right; i++) {
-				if (arr[i] <= value) {
-					index++;
-					change(i, index);
-				}
+		debugger;
+		console.log(arr);
+		const pivot = arr[Math.floor((left + right) / 2)];
+		let i = left;
+		let j = right;
+		while (i <= j) {
+			while (arr[i] < pivot) {
+				i++;
 			}
-			partition(left, index);
-			partition(index + 1, right);
+			while (arr[j] > pivot) {
+				j--;
+			}
+			if (i <= j) {
+				change(i, j);
+				i++;
+				j--;
+			}
+		}
+		if (left < i - 1) {
+			partition(left, i - 1);
+		}
+		if (i < right) {
+			partition(i, right);
 		}
 	}
+
+	if (arr.length < 2) return arr;
 
 	partition(0, arr.length - 1);
 
