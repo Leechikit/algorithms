@@ -49,4 +49,4 @@ function quickSort(arr) {
 	return arr;
 }
 
-export default quickSort;
+module.exports = quickSort;
