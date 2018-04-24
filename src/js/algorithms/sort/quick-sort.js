@@ -4,8 +4,7 @@ function quickSort(arr) {
 	}
 
 	function partition(left, right) {
-		debugger;
-		console.log(arr);
+		dealPivot(left, right);
 		const pivot = arr[Math.floor((left + right) / 2)];
 		let i = left;
 		let j = right;
@@ -16,17 +15,30 @@ function quickSort(arr) {
 			while (arr[j] > pivot) {
 				j--;
 			}
-			if (i <= j) {
+			if (i < j) {
 				change(i, j);
-				i++;
-				j--;
 			}
+			i++;
+			j--;
 		}
 		if (left < i - 1) {
 			partition(left, i - 1);
 		}
 		if (i < right) {
 			partition(i, right);
+		}
+	}
+
+	function dealPivot(left, right) {
+		const mid = (left + right) / 2;
+		if (arr[left] > arr[mid]) {
+			change(left, mid);
+		}
+		if (arr[left] > arr[right]) {
+			change(left, right);
+		}
+		if (arr[right] < arr[mid]) {
+			change(right, mid);
 		}
 	}
 
